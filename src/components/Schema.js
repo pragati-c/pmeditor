@@ -1,7 +1,6 @@
-import {Schema} from "prosemirror-model"
+import { Schema } from "prosemirror-model"
 
-const pDOM = ["p", 0], blockquoteDOM = ["blockquote", 0], hrDOM = ["hr"],
-      preDOM = ["pre", ["code", 0]], brDOM = ["br"]
+const pDOM = ["p", 0], blockquoteDOM = ["blockquote", 0];
 
 
 export const nodes = {
@@ -15,19 +14,19 @@ export const nodes = {
     draggable: true,
     atom: true,
     toDOM: () => ["animaldropdown", 0],
-    parseDOM: [{tag: "animaldropdown"}]
+    parseDOM: [{ tag: "animaldropdown" }]
   },
   paragraph: {
     content: "inline*",
     group: "block",
-    parseDOM: [{tag: "p"}],
+    parseDOM: [{ tag: "p" }],
     toDOM() { return pDOM }
   },
   blockquote: {
     content: "block+",
     group: "block",
     defining: true,
-    parseDOM: [{tag: "blockquote"}],
+    parseDOM: [{ tag: "blockquote" }],
     toDOM() { return blockquoteDOM }
   },
   text: {
@@ -37,36 +36,40 @@ export const nodes = {
     inline: true,
     attrs: {
       src: {},
-      alt: {default: null},
-      title: {default: null}
+      alt: { default: null },
+      title: { default: null }
     },
     group: "inline",
     draggable: true,
-    parseDOM: [{tag: "img[src]", getAttrs(dom) {
-      return {
-        src: dom.getAttribute("src"),
-        title: dom.getAttribute("title"),
-        alt: dom.getAttribute("alt")
+    parseDOM: [{
+      tag: "img[src]", getAttrs(dom) {
+        return {
+          src: dom.getAttribute("src"),
+          title: dom.getAttribute("title"),
+          alt: dom.getAttribute("alt")
+        }
       }
-    }}],
+    }],
     toDOM(node) { return ["img", node.attrs] }
   },
   image: {
     inline: true,
     attrs: {
       src: {},
-      alt: {default: null},
-      title: {default: null}
+      alt: { default: null },
+      title: { default: null }
     },
     group: "inline",
     draggable: true,
-    parseDOM: [{tag: "img[src]", getAttrs(dom) {
-      return {
-        src: dom.getAttribute("src"),
-        title: dom.getAttribute("title"),
-        alt: dom.getAttribute("alt")
+    parseDOM: [{
+      tag: "img[src]", getAttrs(dom) {
+        return {
+          src: dom.getAttribute("src"),
+          title: dom.getAttribute("title"),
+          alt: dom.getAttribute("alt")
+        }
       }
-    }}],
+    }],
     toDOM(node) { return ["img", node.attrs] }
   }
 
@@ -75,4 +78,4 @@ export const nodes = {
 export const marks = {
 }
 
-export const schema = new Schema({nodes, marks})
+export const schema = new Schema({ nodes, marks })

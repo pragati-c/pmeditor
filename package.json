@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@quartzy/prosemirror-suggestions": "^0.1.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.1",
@@ -12,7 +11,6 @@
     "prosemirror-example-setup": "^1.1.2",
     "prosemirror-keymap": "^1.1.4",
     "prosemirror-markdown": "^1.5.1",
-    "prosemirror-mentions": "^1.0.0",
     "prosemirror-menu": "^1.1.4",
     "prosemirror-model": "^1.13.3",
     "prosemirror-schema-basic": "^1.1.2",
