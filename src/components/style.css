@@ -287,5 +287,9 @@
   }
   .animal-container {
     width: 80px;
+    position: absolute;
+  }
+  .animal-list {
     border: 1px solid grey;
   }
+  #editor { position: relative; }
